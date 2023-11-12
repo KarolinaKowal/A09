@@ -17,11 +17,58 @@ body {
 a:focus, a:hover {
 	font-style: italic;
 }
+
+#nav_menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav_menu ul li {
+	float:left;
+	position: relative;
+}
+
+#nav_menu ul li a {
+	display: block;
+	width: 160px;
+	text-align: center;
+	padding: 1em 0;
+	text-decoration: none;
+	background-color: #800000;
+	color: white;
+	font-weight: bold;
+}
+
+#nav_menu ul li a.current {
+	color: yellow;
+}
+
+#nav_menu ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+}
+
+#nav_menu ul ul li {
+	float: none;
+}
+
+#nav_menu ul li:hover > ul{
+	display: block;
+}
+
+#nav_menu > ul::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 /* the styles for the header */
 header {
 	padding: 1.5em 0 2em 0;
 	border-bottom: 3px solid #931420;
-		background-image: -moz-linear-gradient(
+	background-image: -moz-linear-gradient(
 	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
 	background-image: -webkit-linear-gradient(
 	    30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
@@ -45,15 +92,23 @@ header img {
 .shadow {
 	text-shadow: 2px 2px 2px #800000;
 }
-/* the styles for the section */
+/* the styles for the main content */
+main img {
+	padding-bottom: 1em;
+}
 section {
 	width: 525px;
 	float: right;
-	padding: 0 20px 20px 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+
 }
+
 section h1 {
 	font-size: 150%;
-	padding: .5em 0 .25em 0;
+	padding-top: .5em;
+	padding-bottom: .25em;
 	margin: 0;
 }
 section h2 {
@@ -61,6 +116,7 @@ section h2 {
 	font-size: 130%;
 	padding: .5em 0 .25em 0;
 }
+
 section p {
 	padding-bottom: .5em;
 }
@@ -73,6 +129,10 @@ section ul {
 }
 section li {
 	padding-bottom: .35em;
+}
+
+ul.circle {
+	list-style-type: circle;
 }
 
 /* the styles for the article */
@@ -88,24 +148,37 @@ article h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
 }
+article p {
+
+}
 article img {
 	float: right;
-	margin: .5em 0 1em 1em;
+	margin-top: .5em;
+	margin-bottom: 1em;
+	margin-left: 1em;
 	border: 1px solid black;
-}
+	padding-bottom: 0;
 
+}
 /* the styles for the aside */
 aside {
 	width: 215px;
 	float: right;
-	padding: 0 0 20px 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+aside h1 {
+	color: #800000;
+	font-size: 100%;
+	padding-top: .5em;
+	padding-bottom: .25em;
 }
 aside h2 {
 	color: #800000;
-	font-size: 130%;
-	padding: .5em 0 .25em 0;
-}
-aside h3 {
+	font-size: 100%;
+	padding-top: .5em;
+	padding-bottom: .25em;
+}aside h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
 }
@@ -117,7 +190,6 @@ aside img {
 footer {
 	background-color: #931420;
 	clear: both;
-
 }
 footer p {
 	text-align: center;
